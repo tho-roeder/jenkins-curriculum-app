@@ -17,7 +17,11 @@ pipeline {
 
         stage('') {
           steps {
-            bat ' cd /d C:\\\\path\\\\to\\\\curriculum-front                     npm install                     npm run test:unit'
+            bat '''
+              cd /d C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\jenkins-curriculum-app_dev
+              npm install
+              npm run test:unit
+            '''
           }
         }
 
