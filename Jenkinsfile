@@ -15,7 +15,7 @@ pipeline {
           }
         }
 
-        stage('error') {
+        stage('Tests') {
           steps {
             bat '''
               cd /d C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\jenkins-curriculum-app_dev\\curriculum-front
