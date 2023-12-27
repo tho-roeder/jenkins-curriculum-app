@@ -7,9 +7,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
-        bat 'bat \'\'\'@echo off dir /a\'\'\''
+        bat 'dir /a'
       }
     }
 
