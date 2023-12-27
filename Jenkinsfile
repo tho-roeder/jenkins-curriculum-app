@@ -28,9 +28,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
-        sh 'docker build -f curriculum-front/Dockerfile .'
+        bat 'docker build -f curriculum-front/Dockerfile .'
       }
     }
 
