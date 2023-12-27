@@ -7,12 +7,9 @@ pipeline {
       }
     }
 
-    stage('Log') {
+    stage('') {
       steps {
-        script {
-          ls -la
-        }
-
+        bat 'bat \'\'\'@echo off dir /a\'\'\''
       }
     }
 
