@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('Log') {
-      steps {
-        bat 'dir /a'
+      parallel {
+        stage('Log') {
+          steps {
+            bat 'dir /a'
+          }
+        }
+
+        stage('') {
+          steps {
+            bat ' cd /d C:\\\\path\\\\to\\\\curriculum-front                     npm install                     npm run test:unit'
+          }
+        }
+
       }
     }
 
