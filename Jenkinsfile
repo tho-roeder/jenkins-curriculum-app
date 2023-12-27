@@ -7,9 +7,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
-        sh 'ls -la'
+        sh 'cd curriculum-front && npm i && npm run test:unit'
       }
     }
 
