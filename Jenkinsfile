@@ -15,7 +15,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             bat '''
               cd /d C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\jenkins-curriculum-app_dev\\curriculum-front
@@ -25,6 +25,12 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('Build') {
+      steps {
+        bat 'docker build -f curriculum-front/Dockerfile .'
       }
     }
 
