@@ -85,7 +85,8 @@ pipeline {
           withDockerRegistry(credentialsId: 'docker', toolName: 'docker-lts') {
             // some block
             // sh(script:'docker build -t jenkins-curriculum-app:latest -f curriculum-front/Dockerfile .')
-            sh "docker info"
+            // sh "docker info"
+            sh(script: 'docker --version)
           }
         }
         
