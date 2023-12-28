@@ -77,7 +77,10 @@ pipeline {
     stage('Build') {
       steps {
         //sh 'docker build -f curriculum-front/Dockerfile .'
-        sh 'docker build -t thoroeder/jenkins-curriculum-app:latest .'
+        //sh 'docker build -t thoroeder/jenkins-curriculum-app:latest .'
+        script {
+         'docker build -f curriculum-front/Dockerfile .'
+        }
       }
     }
     
