@@ -6,7 +6,13 @@ pipeline {
     jdk 'jdk-lts'
   }
   
-  stage('Install vue-jest') {
+  stages {
+    stage('Check npm') {
+      steps {
+        sh 'npm version'
+      }
+    }
+    stage('Install vue-jest') {
             steps {
                 script {
                     // Install vue-jest using npm
@@ -14,23 +20,16 @@ pipeline {
                 }
             }
         }
-
-  stage('Run Tests') {
-      steps {
-          script {
-              // Run your tests using vue-cli-service or other test runner
-              sh 'npm run test:unit'
-          }
-      }
-  }
-  
-  stages {
-    stage('Check npm') {
-      steps {
-        sh 'npm version'
-      }
+    
+    stage('Run Tests') {
+        steps {
+            script {
+                // Run your tests using vue-cli-service or other test runner
+                sh 'npm run test:unit'
+            }
+        }
     }
-
+      
     stage('Check Docker Version') {
       steps {
         script {
