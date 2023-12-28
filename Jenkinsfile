@@ -1,7 +1,7 @@
 pipeline {
   agent any
     tools {
-    nodejs 'NodeJs-lts'
+    //nodejs 'NodeJs-lts'
     dockerTool 'docker-lts'
     jdk 'jdk-lts'
   }
@@ -17,8 +17,7 @@ pipeline {
             steps {
                 script {
                     // Install vue-jest using npm
-                    // sh 'npm install --save-dev vue-jest'
-                    sh 'npm install --save-dev jest @vue/test-utils babel-jest vue-jest'
+                    sh 'npm install'
                 }
             }
     }
