@@ -5,11 +5,11 @@ pipeline {
     dockerTool 'docker-lts'
     jdk 'jdk-lts'
   }
-  
+  /*
   environment {
     DOCKER_CERT_PATH = credentials('docker_ssh')
   }
-  
+  */
   stages {
     
     stage('Install vue-jest') {
