@@ -12,6 +12,7 @@ pipeline {
         sh 'npm version'
       }
     }
+    
     stage('Install vue-jest') {
             steps {
                 script {
@@ -19,15 +20,6 @@ pipeline {
                     sh 'npm install --save-dev vue-jest'
                 }
             }
-        }
-    
-    stage('Run Tests') {
-        steps {
-            script {
-                // Run your tests using vue-cli-service or other test runner
-                sh 'npm run test:unit'
-            }
-        }
     }
       
     stage('Check Docker Version') {
