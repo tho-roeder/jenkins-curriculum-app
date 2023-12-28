@@ -86,7 +86,7 @@ pipeline {
             // some block
             // sh(script:'docker build -t jenkins-curriculum-app:latest -f curriculum-front/Dockerfile .')
             // sh "docker info"
-            sh(script: 'docker --version)
+            sh(script: 'docker --version')
           }
         }
         
