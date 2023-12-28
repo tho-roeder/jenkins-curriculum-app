@@ -79,7 +79,9 @@ pipeline {
       steps {
         //sh 'docker build -f curriculum-front/Dockerfile .'
         //sh 'docker build -t thoroeder/jenkins-curriculum-app:latest .'
-        
+        tool name: 'docker-lts', type: 'dockerTool'
+        sh 'docker build -f curriculum-front/Dockerfile .'
+        /*
         script {
           // This step should not normally be used in your script. Consult the inline help for details.
           withDockerRegistry(credentialsId: 'docker', toolName: 'docker-lts') {
@@ -89,7 +91,7 @@ pipeline {
             sh(script: 'docker --version')
           }
         }
-        
+        */
         /*
         script {
          'docker build -f curriculum-front/Dockerfile .'
