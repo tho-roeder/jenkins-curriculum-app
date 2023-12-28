@@ -7,7 +7,7 @@ pipeline {
   }
   
   environment {
-    DOCKER_CERT_PATH = credentials('docker')
+    DOCKER_CERT_PATH = credentials('docker_ssh')
   }
   
   stages {
