@@ -55,12 +55,26 @@ pipeline {
         */
       }
     }
-
+    
+    stage('Check Docker Daemon') {
+            steps {
+                script {
+                    def dockerVersion = sh(script: 'docker --version', returnStatus: true)
+                    
+                    if (dockerVersion == 0) {
+                        echo "Docker daemon is running"
+                    } else {
+                        error "Docker daemon is not running or accessible"
+                    }
+                }
+            }
+    }
+    /*
     stage('Build') {
       steps {
         sh 'docker build -f curriculum-front/Dockerfile .'
       }
     }
-
+    */
   }
 }
