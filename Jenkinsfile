@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  tools {
+        nodejs 'NodeJs-lts'
+        dockerTool 'docker-lts'
+    }
   stages {
     stage('Checkout Code') {
       steps {
