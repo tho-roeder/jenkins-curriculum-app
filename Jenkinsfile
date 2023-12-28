@@ -5,6 +5,20 @@ pipeline {
         dockerTool 'docker-lts'
     }
   stages {
+     stage('Check npm') {
+            steps {
+                sh 'npm version'
+            }
+        }
+        stage('Check Docker Version') {
+            steps {
+                script {
+                    // Run docker version command
+                    def dockerVersion = sh(script: 'docker --version', returnStdout: true).trim()
+                    echo "Docker Version: ${dockerVersion}"
+                }
+            }
+        }
     stage('Checkout Code') {
       steps {
         git(url: 'https://github.com/tho-roeder/jenkins-curriculum-app/', branch: 'dev')
