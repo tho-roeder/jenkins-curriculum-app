@@ -1,5 +1,11 @@
 pipeline {
   agent any
+    tools {
+    nodejs 'NodeJs-lts'
+    dockerTool 'docker-lts'
+    jdk 'jdk-lts'
+  }
+  
   stages {
     stage('Check npm') {
       steps {
@@ -46,9 +52,5 @@ pipeline {
       }
     }
 
-  }
-  tools {
-    nodejs 'NodeJs-lts'
-    dockerTool 'docker-lts'
   }
 }
