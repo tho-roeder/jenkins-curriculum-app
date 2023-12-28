@@ -39,7 +39,8 @@ pipeline {
     
     stage('Checkout Code') {
       steps {
-        git(url: 'https://github.com/tho-roeder/jenkins-curriculum-app/', branch: 'dev')
+        git branch: 'dev', credentialsId: 'git_cred', url: 'https://github.com/tho-roeder/jenkins-curriculum-app'
+        //git(url: 'https://github.com/tho-roeder/jenkins-curriculum-app/', branch: 'dev')
       }
     }
 
