@@ -17,7 +17,8 @@ pipeline {
 
         stage('Tests') {
           steps {
-            sh 'cd curriculum-front && npm i && npm run test:unit'
+            sh '''nodejs \'NodeJs-lts\' &&
+cd curriculum-front && npm i && npm run test:unit'''
           }
         }
 
