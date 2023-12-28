@@ -81,7 +81,7 @@ pipeline {
         
         script {
           // This step should not normally be used in your script. Consult the inline help for details.
-          withDockerRegistry(credentialsId: 'docker', toolName: 'docker-lts') {
+          withDockerRegistry(credentialsId: 'docker_ssh', toolName: 'docker-lts') {
             // some block
             // sh(script:'docker build -t jenkins-curriculum-app:latest -f curriculum-front/Dockerfile .')
             sh 'docker info'
