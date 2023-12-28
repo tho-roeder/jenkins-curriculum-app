@@ -7,11 +7,6 @@ pipeline {
   }
   
   stages {
-    stage('Check npm') {
-      steps {
-        sh 'npm version'
-      }
-    }
     
     stage('Install vue-jest') {
             steps {
@@ -21,7 +16,13 @@ pipeline {
                 }
             }
     }
-      
+
+    stage('Check npm') {
+      steps {
+        sh 'npm version'
+      }
+    }
+    
     stage('Check Docker Version') {
       steps {
         script {
