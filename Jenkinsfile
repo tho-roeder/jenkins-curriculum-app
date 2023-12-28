@@ -4,6 +4,7 @@ pipeline {
     nodejs 'NodeJs-lts'
     dockerTool 'docker-lts'
     jdk 'jdk-lts'
+    git 'Git'
   }
   /*
   environment {
