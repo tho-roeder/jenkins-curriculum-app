@@ -11,26 +11,22 @@ pipeline {
       parallel {
         stage('Log') {
           steps {
-            bat 'dir /a'
+            sh 'ls -la'
           }
         }
 
         stage('Tests') {
           steps {
-            bat '''
-              cd /d C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\jenkins-curriculum-app_dev\\curriculum-front
-              npm install
-              npm run test:unit
-            '''
+            sh 'cd curriculum-front && npm i && npm run test:unit'
           }
         }
 
       }
     }
 
-    stage('error') {
+    stage('Build') {
       steps {
-        bat 'docker build -f curriculum-front/Dockerfile .'
+        sh 'docker build -f curriculum-front/Dockerfile .'
       }
     }
 
