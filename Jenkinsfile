@@ -6,6 +6,24 @@ pipeline {
     jdk 'jdk-lts'
   }
   
+  stage('Install vue-jest') {
+            steps {
+                script {
+                    // Install vue-jest using npm
+                    sh 'npm install --save-dev vue-jest'
+                }
+            }
+        }
+
+  stage('Run Tests') {
+      steps {
+          script {
+              // Run your tests using vue-cli-service or other test runner
+              sh 'npm run test:unit'
+          }
+      }
+  }
+  
   stages {
     stage('Check npm') {
       steps {
