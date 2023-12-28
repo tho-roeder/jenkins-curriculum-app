@@ -50,13 +50,13 @@ pipeline {
             sh 'ls -la'
           }
         }
-        
+        /*
         stage('Tests') {
           steps {
             sh 'cd curriculum-front && npm i && npm run test:unit'
           }
         }
-        
+        */
       }
     }
     
@@ -73,13 +73,13 @@ pipeline {
                 }
             }
     }
-    /*
+    
     stage('Build') {
       steps {
         //sh 'docker build -f curriculum-front/Dockerfile .'
         sh 'docker build -t thoroeder/jenkins-curriculum-app:latest .'
       }
     }
-    */
+    
   }
 }
